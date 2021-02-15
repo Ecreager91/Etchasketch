@@ -1,0 +1,1 @@
+//this is the JS code for the etch-a-sketch project
