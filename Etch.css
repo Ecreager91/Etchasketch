@@ -1,4 +1,12 @@
 body{
-    background-color: darkgray;
+    background-color: rgba(241, 26, 26, 0.931);
 
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+#divcontainer{
+
+ color: grey;
 }
