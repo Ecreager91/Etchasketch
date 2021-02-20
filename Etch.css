@@ -4,9 +4,10 @@ body{
 }
 
 h1{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Architects Daughter', cursive;
     display: flex;
     justify-content: center;
+
 }
 
 #divcontainer{
