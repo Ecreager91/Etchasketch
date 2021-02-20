@@ -2,12 +2,12 @@ body{
     background-color: rgba(241, 26, 26, 0.931);
 
 }
+
 h1{
     display: flex;
     justify-content: center;
 }
+
 #divcontainer{
-max-height: 80%;
-max-width: 80%;
 background-color: grey;
 }
