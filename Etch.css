@@ -22,7 +22,7 @@ body{
     width: 70vh;
 }
 #topButtons > button{
-    background-color: rgb(128, 127, 125);
+    background-color: rgb(165, 161, 161);
     border: none;
     color: rgb(2, 2, 2);
     font-size: 25px;
@@ -53,14 +53,14 @@ body{
 }
 #blackB{
     background: rgb(0, 0, 0);
-    color:rgb(173, 171, 171);
+    color:rgb(165, 161, 161);
 }
 #rgbB{
     background: linear-gradient(90deg, rgba(255, 0, 0, 0.425), rgba(0, 0, 255, 0.438),
      rgba(0, 128, 0, 0.432))
 }
 #gradualB{
-    background: linear-gradient(90deg, rgb(0, 0, 0) 5%, white 75%);
+    background: linear-gradient(90deg, rgb(0, 0, 0) 5%, rgb(165, 161, 161)75%);
     
 }/* buttons done*/
 /*containerwrapper & container */
