@@ -74,7 +74,7 @@ body{
     margin: 10px 0px;
 }
 .gridContainer{
-    background-color:white;
+    background-color:rgb(165, 161, 161);
     width: 100%;
     height: 100%;
     position: absolute;
