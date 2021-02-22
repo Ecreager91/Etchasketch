@@ -1,81 +1,92 @@
-function removeActiveStyle(buttons) {
-  buttons.forEach((button) => {
-    button.classList.remove('active');
-  });
-}
+//variables
+const buttonClear = document.querySelector('.clearButton')
+const buttonNew = document.querySelector('.newGame')
+const gridContainer = document.querySelector('.gridContainer')
+const buttonColor = document.querySelectorAll('.colorChoice')
+let color = 'black'
 
-function generateGrid(divNum = 20 * 20, className = 'grid-20x20') {
-  const gridContainer = document.querySelector('.grid-container');
-  gridContainer.innerHTML = '';
-  for (let i = 0; i < divNum; i += 1) {
-    const gridDiv = document.createElement('div');
-    gridContainer.classList.remove('grid-10x10', 'grid-20x20', 'grid-30x30');
-    gridContainer.classList.add(className);
-    gridContainer.appendChild(gridDiv);
-  }
-}
-
-function chooseGrid() {
-  const colorButtons = document.querySelectorAll('.rectangle');
-  const gridButtons = document.querySelectorAll('.circle');
-  gridButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      removeActiveStyle(colorButtons);
-      removeActiveStyle(gridButtons);
-      if (button.classList.contains('grid-10')) {
-        gridButtons[0].classList.add('active');
-        generateGrid(10 * 10, 'grid-10x10');
-      } else if (button.classList.contains('grid-20')) {
-        gridButtons[1].classList.add('active');
-        generateGrid();
-      } else if (button.classList.contains('grid-30')) {
-        gridButtons[2].classList.add('active');
-        generateGrid(30 * 30, 'grid-30x30');
-      }
-    });
-  });
-}
-
-function generateColor(name, colors) {
-  const gridItem = document.querySelectorAll('.grid-container > div');
-  gridItem.forEach((item) => {
-    if (name === 'warm' || name === 'cold') {
-      const randomColors = colors[Math.floor(
-        Math.random() * colors.length,
-      )];
-      item.addEventListener('mouseenter', (e) => {
-        e.target.style.backgroundColor = randomColors;
-      });
-    } else if (name === 'black' || name === 'white') {
-      item.addEventListener('mouseenter', (e) => {
-        e.target.style.backgroundColor = colors;
-      });
+createGrid(20);
+//function to create grid - input; square(input*input) - for loop iteration; 
+//add css style to gridContainer
+//forloop - create and insert divs
+function createGrid(gridNumber){
+    let gridSquare = gridNumber * gridNumber;
+    gridContainer.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`
+    gridContainer.style.gridTemplateRows = `repeat(${gridNumber}, 1fr)`
+    for(i = 1; i <= gridSquare; i++ ){
+        let grids = document.createElement('div')
+        gridContainer.insertAdjacentElement('afterbegin', grids) //can beforeend?
     }
-  });
+    //get all divs, iterate through each
+    let wholeGrid = gridContainer.querySelectorAll('div')
+    wholeGrid.forEach(oneGrid => oneGrid.addEventListener('mouseover', colorGrid))
 }
 
-function chooseColor() {
-  const colorButtons = document.querySelectorAll('.rectangle');
-  colorButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      removeActiveStyle(colorButtons);
-      if (button.classList.contains('warm')) {
-        colorButtons[0].classList.add('active');
-        generateColor('warm', ['#BF6A6D', '#A45256', '#EC6760', '#F88C5D', '#FDCF6D']);
-      } else if (button.classList.contains('cold')) {
-        colorButtons[1].classList.add('active');
-        generateColor('cold', ['#5590BC', '#0DABB8', '#01F0F6', '#1FFDE1', '#57FFC8']);
-      } else if (button.classList.contains('black')) {
-        colorButtons[2].classList.add('active');
-        generateColor('black', '#000000');
-      } else if (button.classList.contains('white')) {
-        colorButtons[3].classList.add('active');
-        generateColor('white', '#FFFFFF');
-      }
-    });
-  });
+//function for drawing colors called in create grid
+// var color in switch expression - at row 5 - created var color
+//color will serve as case switcher with next function changeVarColor
+//random case - calling value from getRandomColor fucntion
+function colorGrid(){
+    switch(color){
+        case 'random':
+            this.style.backgroundColor = getRandomColor();
+            break
+        case 'gradual':
+            this.style.backgroundColor = 'grey' //not really gradual, it's optional in odinProject
+            break
+        case 'black':
+            this.style.backgroundColor = 'black'
+            break
+        default:
+            this.style.backgroundColor = 'black'
+            break;
+    }
+}
+//this function changes variable color
+// connected to the buttons with addeventListener + dataset in html
+//parametr in function is event (clicking button)
+//expression in switch is button's dataset-color which is same as case (might be confusing)
+//it changes var color, which is used in function colorGrid, which is called in createGrid
+function changeColorVar(e){
+    switch(e.target.dataset.color){
+        case 'random':
+            color = 'random'
+            break
+        case 'gradual':
+            color = 'gradual'
+            break
+        default:
+            color = 'black'
+            break
+    }
+}
+//copied from stack overflow!
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+//simple erase button
+function erase(){
+    let wholeGrid = gridContainer.querySelectorAll('div')
+    wholeGrid.forEach(oneGrid => oneGrid.style.backgroundColor = '#fff')
+};
+//funciton for new Game
+//parseint for getting number out of string
+//call createGrid with prompt as argument
+function makeNew(){
+    erase()
+    let gridNumber = parseInt(prompt('Gimme a grid size:'))
+    while(isNaN(gridNumber) || gridNumber < 0 || gridNumber > 100){
+        gridNumber = parseInt(prompt('Pick a number between 1 and 100'))
+    }
+    createGrid(gridNumber)
 }
 
-chooseGrid();
-generateGrid();
-chooseColor();
+//eventlisteners
+buttonClear.addEventListener('click', erase)
+buttonNew.addEventListener('click', makeNew)
+buttonColor.forEach(button => button.addEventListener('click', changeColorVar))
