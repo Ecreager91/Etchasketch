@@ -56,7 +56,7 @@ body{
 
 /*containerwrapper & container */
 .gridWrap{
-    min-height: 65vh;
+    min-height: 60vh;
     min-width: 45vw;
     position:relative;
     border: gold double 1rem;
