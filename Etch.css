@@ -42,17 +42,17 @@ body{
     cursor: pointer;
 }
 #blackB{
-     font-size: 1.25rem;
+    font-size: 1.25rem;
     text-align: center;
     text-decoration: none;
-    padding: .6rem .75rem;
+    padding: 1rem .75rem;
     cursor: pointer;
     margin: 0 .75rem;
     background: rgb(0, 0, 0);
     color:rgb(165, 161, 161);
 }
 #rgbB{
-     font-size: 1.25rem;
+    font-size: 1.25rem;
     text-align: center;
     text-decoration: none;
     padding: .6rem .75rem;
