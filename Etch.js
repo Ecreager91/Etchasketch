@@ -1,5 +1,5 @@
 //variables
-const buttonClear = document.querySelector('.clearButton')
+//const buttonClear = document.querySelector('.clearButton')
 const buttonNew = document.querySelector('.newGame')
 const gridContainer = document.querySelector('.gridContainer')
 const buttonColor = document.querySelectorAll('.colorChoice')
@@ -87,6 +87,6 @@ function makeNew(){
 }
 
 //eventlisteners
-buttonClear.addEventListener('click', erase)
+//buttonClear.addEventListener('click', erase)
 buttonNew.addEventListener('click', makeNew)
 buttonColor.forEach(button => button.addEventListener('click', changeColorVar))

@@ -58,9 +58,11 @@ body{
     padding: .6rem .75rem;
     cursor: pointer;
     margin: 0 .75rem;
-    background: linear-gradient(90deg, rgba(255, 0, 0, 0.425), rgba(0, 0, 255, 0.438),
+    border:black solid .2rem;
+    background: linear-gradient(90deg, rgba(17, 0, 255, 0.425), rgba(31, 255, 1, 0.438),
      rgba(0, 128, 0, 0.432))
 }
+/*
 #gradualB{
     font-size: 1.25rem;
     text-align: center;
@@ -69,8 +71,8 @@ body{
     cursor: pointer;
     margin: 0 .75rem;
     background: linear-gradient(90deg, rgb(0, 0, 0) 5%, rgb(165, 161, 161)75%);
-    
-}/* buttons done*/
+*/    
+/* buttons done*/
 
 /*containerwrapper & container */
 .gridWrap{
