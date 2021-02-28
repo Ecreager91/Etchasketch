@@ -31,9 +31,9 @@ function colorGrid(){
         case 'random':
             this.style.backgroundColor = getRandomColor();
             break
-        case 'gradual':
-            this.style.backgroundColor = 'grey' //not really gradual, it's optional in odinProject
-            break
+        //case 'gradual':
+          //  this.style.backgroundColor = 'grey' //not really gradual, it's optional in odinProject
+           // break
         case 'black':
             this.style.backgroundColor = 'black'
             break
@@ -79,8 +79,8 @@ function erase(){
 //call createGrid with prompt as argument
 function makeNew(){
     erase()
-    let gridNumber = parseInt(prompt('Gimme a grid size:'))
-    while(isNaN(gridNumber) || gridNumber < 0 || gridNumber > 100){
+    let gridNumber = parseInt(prompt('Gimme a grid size between 1 - 100!'))
+    while(isNaN(gridNumber) || gridNumber < 1 || gridNumber > 100){
         gridNumber = parseInt(prompt('Pick a number between 1 and 100'))
     }
     createGrid(gridNumber)
