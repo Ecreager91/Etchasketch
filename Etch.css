@@ -21,9 +21,9 @@ body{
     width: 53.5vh;
 }
 #topButtons > button{
-    background-color: rgb(165, 161, 161);
-    border: none;
-    color: rgb(2, 2, 2);
+    background-color: rgb(165, 160, 160);
+    border: black solid .2rem;
+    color: black;
     font-size: 1.25rem;
     text-align: center;
     text-decoration: none;
@@ -60,7 +60,7 @@ body{
     cursor: pointer;
     margin: 0 .75rem;
     border:black solid .2rem;
-    background: linear-gradient(90deg, cyan, green, yellow)
+    background: linear-gradient(75deg, cyan, magenta, yellow)
 }
 /*
 #gradualB{
