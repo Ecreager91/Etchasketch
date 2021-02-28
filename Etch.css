@@ -42,14 +42,32 @@ body{
     cursor: pointer;
 }
 #blackB{
+     font-size: 1.25rem;
+    text-align: center;
+    text-decoration: none;
+    padding: .6rem .75rem;
+    cursor: pointer;
+    margin: 0 .75rem;
     background: rgb(0, 0, 0);
     color:rgb(165, 161, 161);
 }
 #rgbB{
+     font-size: 1.25rem;
+    text-align: center;
+    text-decoration: none;
+    padding: .6rem .75rem;
+    cursor: pointer;
+    margin: 0 .75rem;
     background: linear-gradient(90deg, rgba(255, 0, 0, 0.425), rgba(0, 0, 255, 0.438),
      rgba(0, 128, 0, 0.432))
 }
 #gradualB{
+    font-size: 1.25rem;
+    text-align: center;
+    text-decoration: none;
+    padding: .6rem .75rem;
+    cursor: pointer;
+    margin: 0 .75rem;
     background: linear-gradient(90deg, rgb(0, 0, 0) 5%, rgb(165, 161, 161)75%);
     
 }/* buttons done*/
