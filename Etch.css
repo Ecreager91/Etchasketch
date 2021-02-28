@@ -27,9 +27,9 @@ body{
     font-size: 1.25rem;
     text-align: center;
     text-decoration: none;
-    padding: 8px 16px;
+    padding: .6rem .75rem;
     cursor: pointer;
-    margin: 0 10px;
+    margin: 0 .75rem;
 }
 
 .colorChoice{
